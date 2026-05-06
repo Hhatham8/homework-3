@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediCare Plus - Thank You</title>
-    <!-- External CSS Link -->
-    <link href="style.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header-div">
-            <div class="logo-container">
-                <img src="logo.png" alt="MediCare Plus Logo">
-                <h1>MediCare Plus</h1>
-            </div>
-            <div>
-                Today is: <span id="date-display" class="date-display">...loading date...</span>
-            </div>
-        </div>
-
-        <!-- Main Content Section -->
-        <div style="text-align: center; padding: 50px 0;">
-            <h2>Thank You!</h2>
-            <p style="font-size: 1.2em;">Thank you for your submission. We will be contacting you shortly.</p>
-            <p><a href="homework3/homework3.html">Return to Form</a></p>
-        </div>
-
-        <!-- Footer Section -->
-        <div class="footer-div">
-            <p>
-                <strong>MediCare Plus</strong><br>
-                PO BOX 18881<br>
-                Sugar Land, TX 77496
-            </p>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-            <a href="https://www.twitter.com" target="_blank">Twitter</a><br>
-            <a href="#" class="btn-contact">Contact Us</a>
-        </div>
-
-    </div>
-
-    <!-- Inline JavaScript for Dynamic Date -->
-    <script>
-        function getFormattedDate() {
-            const date = new Date();
-            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-            const dayName = days[date.getDay()];
-            const monthName = months[date.getMonth()];
-            const dayNum = date.getDate();
-            const year = date.getFullYear();
-
-            let suffix = "th";
-            if (dayNum % 10 === 1 && dayNum !== 11) suffix = "st";
-            else if (dayNum % 10 === 2 && dayNum !== 12) suffix = "nd";
-            else if (dayNum % 10 === 3 && dayNum !== 13) suffix = "rd";
-
-            return `${dayName}, ${monthName} ${dayNum}${suffix}, ${year}`;
+    <title>Registration Complete | MediCare Plus</title>
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        .thank-you-card {
+            text-align: center;
+            padding: 4rem 2rem;
         }
-        document.getElementById('date-display').innerText = getFormattedDate();
-    </script>
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 2rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .btn-home:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="header-banner">
+            <div class="banner-content">
+                <div class="logo-area">
+                    <img src="logo.png" alt="MediCare Plus Logo" id="main-logo">
+                    <div>
+                        <h1 class="company-name">MediCare Plus</h1>
+                        <p class="company-tagline">Excellence in Care, Every Patient, Every Day</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <main>
+            <section class="form-card thank-you-card">
+                <div class="success-icon">✓</div>
+                <h2>Registration Submitted Successfully!</h2>
+                <p class="intro-text">Thank you for choosing MediCare Plus. We have received your registration details and our staff will be contacting you shortly to schedule your initial consultation.</p>
+                <p>A confirmation email has been sent to the address provided.</p>
+                
+                <a href="homework3.html" class="btn-home">Return to Home</a>
+            </section>
+        </main>
+
+        <footer id="main-footer">
+            <div class="footer-info">
+                <p>&copy; 2026 MediCare Plus. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 </body>
-
 </html>
