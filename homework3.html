@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NovaCare Clinic Patient Registration Form - Homework 3. Advanced validation and modern UI.">
-    <title>NovaCare Clinic | Patient Registration – HW3</title>
+    <meta name="description" content="MediCare Plus Patient Registration Form - Homework 3. Advanced validation and modern UI.">
+    <title>MediCare Plus | Patient Registration – HW3</title>
     
     <!-- External CSS -->
     <link rel="stylesheet" href="style3.css">
@@ -16,9 +15,9 @@
         <header id="header-banner">
             <div class="banner-content">
                 <div class="logo-area">
-                    <img src="logo.png" alt="NovaCare Clinic Logo" id="main-logo">
+                    <img src="logo.png" alt="MediCare Plus Logo" id="main-logo">
                     <div>
-                        <h1 class="company-name">NovaCare Clinic</h1>
+                        <h1 class="company-name">MediCare Plus</h1>
                         <p class="company-tagline">Excellence in Care, Every Patient, Every Day</p>
                     </div>
                 </div>
@@ -70,18 +69,29 @@
                                 <td colspan="3">
                                     <div class="dob-group">
                                         <input type="text" id="dob-month" name="dob-month" maxlength="2" placeholder="MM" class="input-xs"
-                                               prompt="Month (MM)" title="Birth month (01-12)"
+                                               prompt="Month (MM)" title="Birth month (01-12)" required
                                                oninput="validateDOB()" onblur="validateDOB()">
                                         <span>/</span>
                                         <input type="text" id="dob-day" name="dob-day" maxlength="2" placeholder="DD" class="input-xs"
-                                               prompt="Day (DD)" title="Birth day (01-31)"
+                                               prompt="Day (DD)" title="Birth day (01-31)" required
                                                oninput="validateDOB()" onblur="validateDOB()">
                                         <span>/</span>
                                         <input type="text" id="dob-year" name="dob-year" maxlength="4" placeholder="YYYY" class="input-sm"
-                                               prompt="Year (YYYY)" title="Birth year (e.g. 1990)"
+                                               prompt="Year (YYYY)" title="Birth year (e.g. 1990)" required
                                                oninput="validateDOB()" onblur="validateDOB()">
                                     </div>
                                     <div id="dob-error" class="error-msg"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Gender <span class="required">*</span></label></td>
+                                <td colspan="3">
+                                    <div class="radio-group" title="Select your gender">
+                                        <label><input type="radio" name="gender" value="Male" required onchange="validateField('gender')"> Male</label>
+                                        <label><input type="radio" name="gender" value="Female" onchange="validateField('gender')"> Female</label>
+                                        <label><input type="radio" name="gender" value="Other" onchange="validateField('gender')"> Other</label>
+                                    </div>
+                                    <div id="gender-error" class="error-msg"></div>
                                 </td>
                             </tr>
                             <tr>
@@ -178,7 +188,6 @@
                                         <option value="NV">Nevada</option>
                                         <option value="NH">New Hampshire</option>
                                         <option value="NJ">New Jersey</option>
-                                        <option value="NM">New Mexico</option>
                                         <option value="NM">New Mexico</option>
                                         <option value="NY">New York</option>
                                         <option value="NC">North Carolina</option>
@@ -326,9 +335,9 @@
 
         <footer id="main-footer">
             <div class="footer-info">
-                <p>&copy; 2026 NovaCare Clinic. All rights reserved.</p>
+                <p>&copy; 2026 MediCare Plus. All rights reserved.</p>
                 <p>1200 Healthcare Blvd, Suite 400 | Houston, TX 77030</p>
-                <p>Support: <a href="mailto:support@novacare.demo">support@novacare.demo</a></p>
+                <p>Support: <a href="mailto:support@medicareplus.demo">support@medicareplus.demo</a></p>
             </div>
         </footer>
     </div>
