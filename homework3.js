@@ -168,6 +168,13 @@ function validateField(id) {
                 errorMsg = "Avoid using special symbols like <, >, or double quotes.";
             }
             break;
+
+        case 'gender':
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                errorMsg = "Please select your gender.";
+            }
+            break;
     }
     
     // Display result
@@ -250,7 +257,7 @@ function performFullValidation() {
     
     // Trigger on-the-fly logic for all inputs
     const ids = [
-        'fname', 'mi', 'lname', 'ssn', 'email', 
+        'fname', 'mi', 'lname', 'gender', 'ssn', 'email', 
         'addr1', 'addr2', 'city', 'state', 'zip',
         'userid', 'password', 'password_confirm', 'comments'
     ];
@@ -261,6 +268,15 @@ function performFullValidation() {
     
     // Validate DOB specifically
     if (!validateDOB()) valid = false;
+
+    // Validate Gender
+    const gender = document.querySelector('input[name="gender"]:checked');
+    if (!gender) {
+        showError('gender-error', "Required selection.");
+        valid = false;
+    } else {
+        showError('gender-error', "");
+    }
     
     // Validate Radios (Vaccinated)
     const vacc = document.querySelector('input[name="vaccinated"]:checked');
